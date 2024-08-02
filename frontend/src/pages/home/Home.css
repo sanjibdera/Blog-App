@@ -1,0 +1,19 @@
+.home-title{
+  text-align: center;
+  margin-block: 20px;
+  font-size: 50px;
+}
+
+.home-cards{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  row-gap: 10px;
+  justify-content: space-evenly;
+}
+
+.home-hr{
+  margin-inline: 100px;
+}

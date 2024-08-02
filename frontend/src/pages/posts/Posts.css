@@ -1,0 +1,16 @@
+.posts-header{
+  text-align: center;
+  font-size: 50px;
+  margin-block: 30px;
+}
+
+.posts{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  row-gap: 10px;
+  justify-content: space-evenly;
+  margin-block: 30px;
+}

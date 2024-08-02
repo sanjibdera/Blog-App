@@ -1,0 +1,56 @@
+.login{
+  height: 90vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;  
+}
+
+.login form p{
+  font-size: 17px;
+}
+
+.login span{
+  color: green;
+  cursor: pointer;
+  font-size: 18px;
+  margin-left: 10px;
+}
+
+.login-header{
+  width: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.login-header p{
+  font-size: 22px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: red;
+}
+
+.login form{
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.login form input{
+  height: 45px;
+  font-size: 20px;
+  padding-left: 5px;
+}
+
+.login-btn button{
+  padding: 8px 0px;
+  font-size: 18px;
+  font-weight: 600;
+  width: 100%;
+  border: 3px solid green;
+  border-radius: 10px;
+  cursor: pointer;
+}
