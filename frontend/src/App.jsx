@@ -11,7 +11,7 @@ import { useState } from 'react'
 function App() {
 
   const [userStatus, setUserStatus] = useState("");
-  const API_URL = "http://localhost:4000";
+  const API_URL = "https://blog-app-backend-pvb8.onrender.com";
 
   return (
     <div className="">
