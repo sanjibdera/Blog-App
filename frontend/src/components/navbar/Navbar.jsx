@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import './Navbar.css'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
+import userIcon from '../../assets/user.png'
 
 const Navbar = ({userStatus, setUserStatus}) => {
+
+  const [userClick, SetUserClick] = useState(false);
 
   const navigate = useNavigate();
 
@@ -16,6 +19,7 @@ const Navbar = ({userStatus, setUserStatus}) => {
   function logout() {
     localStorage.removeItem("token");
     setUserStatus("");
+    SetUserClick(!userClick)
     navigate('/');
   }
 
@@ -26,14 +30,21 @@ const Navbar = ({userStatus, setUserStatus}) => {
         <NavLink style={{textDecoration: 'none', color: 'white'}} to={'/'}><p>Home</p></NavLink>
         <NavLink style={{textDecoration: 'none', color: 'white'}} to={'/posts'}><p>Posts</p></NavLink>
       </div>
-      <div className="navbar-option">
+      <div className="navbar-user">
+
         {
-          userStatus ? <Link to={'/create'}><button>Create</button></Link> : <></>
+          userStatus ? <img src={userIcon} alt="" onClick={() => SetUserClick(!userClick)} />
+          : <Link to={'/login'}><button className='login-btn'>Login</button></Link>
         }
+
         {
-          userStatus ? <button className='logout' onClick={logout}>Logout</button>
-          : <Link to={'/login'}><button>Login</button></Link>
-        }
+          userClick ?  <>
+          <div className="navbar-option">
+          <Link to={'/create'}><button onClick={() => SetUserClick(!userClick)}>Create</button></Link>
+          <button className='logout' onClick={logout}>Logout</button>
+          </div>
+          </> : <></>
+        } 
       </div>
     </div>
   )

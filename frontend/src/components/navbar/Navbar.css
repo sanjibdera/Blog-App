@@ -25,22 +25,51 @@
   font-size: 23px;
 }
 
-.navbar-option{
-  display: flex;
-  flex-direction: row;
-  gap: 50px;
+.navbar-user img{
+  width: 27px;
 }
 
-.navbar-option button{
-  padding: 8px 14px;
+.navbar-option{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  position: absolute;
+  top: 55px;
+  right: 30px;
+  background-color: #2f2d2d4b;
+  padding: 3px;
   border-radius: 10px;
-  font-size: 17px;
+}
+
+.navbar-user .login-btn{
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: 16px;
   background: green;
   color: aliceblue;
   border: none;
   cursor: pointer;
 }
 
+.navbar-option button{
+  font-size: 16px;
+  font-weight: 600;
+  padding: 5px;
+  border: none;
+  color: green;
+  cursor: pointer;
+  background: none;
+}
+
 .navbar-option .logout{
-  background-color: rgb(206, 10, 10);
+  color: rgb(206, 10, 10);
+}
+
+@media (max-width:600px) {
+  .navbar{
+    padding-inline: 20px;
+  }
+  .navbar-menu{
+    gap: 20px;
+  }
 }

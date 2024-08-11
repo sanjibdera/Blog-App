@@ -6,12 +6,14 @@ import Card from '../../components/card/Card';
 const Home = ({API_URL}) => {
 
   const [allPosts, setAllPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   async function getAllPost() {
     try {
       const res = await axios.get(API_URL+"/post/allpost");
       if (res.data.success === true) {
         setAllPosts(res.data.allPosts);
+        setLoading(false);
       }
     } catch (error) {
       console.log(error);
@@ -22,8 +24,13 @@ const Home = ({API_URL}) => {
     getAllPost();
   }, [])
 
+  console.log(allPosts);
+
+  
   return (
     <>
+    {loading ? <h1 style={{textAlign: 'center', marginTop: '20%'}}>Please wait, it may take some time to load</h1> :
+     <>
       <h1 className='home-title'>Finance</h1>
       <hr className='home-hr' />
       <br /><br />
@@ -84,6 +91,7 @@ const Home = ({API_URL}) => {
         })
       }
       </div>
+     </>}
     </>
   )
 }
