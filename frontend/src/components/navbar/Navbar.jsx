@@ -41,6 +41,7 @@ const Navbar = ({userStatus, setUserStatus}) => {
           userClick ?  <>
           <div className="navbar-option">
           <Link to={'/create'}><button onClick={() => SetUserClick(!userClick)}>Create</button></Link>
+          <hr />
           <button className='logout' onClick={logout}>Logout</button>
           </div>
           </> : <></>
